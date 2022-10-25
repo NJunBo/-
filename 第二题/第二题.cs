@@ -4,7 +4,7 @@ public int[] Demo(TreeNode root)
 		{
 			return new int[0];
 		}
-		bool isAdd = false;
+		bool isAdd = true;
 		IList<int> res = new List<int>();
 		Queue<TreeNode> queue = new Queue<TreeNode>();
 		Queue<TreeNode> sonQueue = new Queue<TreeNode>();
@@ -12,10 +12,10 @@ public int[] Demo(TreeNode root)
 		while (queue.Count > 0)
 		{
 			TreeNode node = queue.Dequeue();
-            if (!isAdd)
-            {
+		        if (isAdd)
+		       {
 				res.Add(node.val);
-				isAdd = true;
+				isAdd = false;
 			}
 			if (node.left != null)
 			{
@@ -32,7 +32,7 @@ public int[] Demo(TreeNode root)
 				{
 					queue.Enqueue(sonQueue.Dequeue());
 				}
-				isAdd = false;
+				isAdd = true;
 			}
 		}
 		return res.ToArray();
