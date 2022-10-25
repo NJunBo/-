@@ -27,7 +27,7 @@ public int[] Demo(TreeNode root)
 			}
 			//将子节点队列赋值给父节点队列
 			if(queue.Count == 0)
-            {
+                       {
 				for (int i = 0; i < sonQueue.Count; i++)
 				{
 					queue.Enqueue(sonQueue.Dequeue());
