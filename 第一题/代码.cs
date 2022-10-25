@@ -19,7 +19,7 @@
 	private void Move(GameObject gameObject, Vector3 begin, Vector3 end, float time, bool pingpong)
 	{
 		distance = (end - begin).magnitude;
-		if (pingpong)
+		if (!pingpong)
 		{
 			if (gameObject.transform.position.x >= end.x)
 			{
